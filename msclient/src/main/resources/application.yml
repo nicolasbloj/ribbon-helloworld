@@ -1,0 +1,10 @@
+server:
+   port: 8081
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    hostname: localhost
+    nonSecurePort: 8081

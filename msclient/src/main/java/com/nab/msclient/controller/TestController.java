@@ -30,4 +30,14 @@ public class TestController {
    public String doRestHELLOUsingEurekaAndRibbon() {
        return restTemplate.getForObject("http://MsHelloTest/hello", String.class);
    }*/
+
+   // con FEIGN
+
+    @Autowired
+    private TestFeign testFeign;
+    
+    @RequestMapping("/rest/feign")
+    public String doRestHELLOUsingFeign() {
+        return testFeign.doHELLO();
+    }
 }

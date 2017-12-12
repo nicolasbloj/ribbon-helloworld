@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 @RestController
 @RequestMapping("/hello")
 public class TestController {
@@ -37,7 +39,13 @@ public class TestController {
     private TestFeign testFeign;
     
     @RequestMapping("/rest/feign")
+    @HystrixCommand(fallbackMethod="helloFallBack")
     public String doRestHELLOUsingFeign() {
         return testFeign.doHELLO();
+    }
+    
+     
+    public String helloFallBack() {
+        return "Hello World -- CUIRCUIT BREAKER OPEN ";
     }
 }

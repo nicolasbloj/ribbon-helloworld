@@ -26,7 +26,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-				
+		<dependency>
+			<!-- HYSTRIX -->
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+							
 		<!-- Para modificaciones en caliente -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

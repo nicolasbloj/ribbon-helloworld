@@ -1,0 +1,20 @@
+server:
+   port: 8098
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    hostname: localhost
+    nonSecurePort: 8098
+ 
+zuul:
+  routes:
+    backend:
+      path: /backend/**
+      url: http://localhost:8080/hello
+    ribbonbackend:
+      path: /ribbonbackend/**
+      serviceId: MsHelloTest
+      

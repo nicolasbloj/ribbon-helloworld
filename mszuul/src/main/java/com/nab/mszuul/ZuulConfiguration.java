@@ -17,5 +17,5 @@ public class ZuulConfiguration {
         return new MyZuulFilter();
     }
     
-    // Call to ms --> http://localhost:8099/ribbonbackend/hello
+    // Call to ms --> http://localhost:8098/ribbonbackend/hello
 }

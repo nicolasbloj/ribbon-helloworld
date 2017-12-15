@@ -1,3 +1,9 @@
 spring:
   application:
      name: MsHelloTest
+  cloud:
+     config:
+       discovery:
+         service-id: MYCONFIGURATIONSERVER
+         enabled: true
+       fail-fast: true

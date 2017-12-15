@@ -18,10 +18,14 @@ public class HelloController {
 
 	@Autowired
 	private Environment environment;
-	
+
 	@Value("${server.port}")
 	private String port;
-	
+
+	// FROM GIT
+	//@Value("${variable}")
+	private String variableFromConfigServer;
+
 	@RequestMapping
 	@HystrixCommand(fallbackMethod = "helloFallBack")
 	public String hello() {
@@ -32,9 +36,14 @@ public class HelloController {
 		return "Hello World ... CIRCUIT OPEN ... Fall back method";
 	}
 
-	@RequestMapping("/getPort")
+	@RequestMapping("/port")
 	public String getPort() {
-		//return environment.getProperty("server.port");
-		return   port;
+		// return environment.getProperty("server.port");
+		return port;
+	}
+
+	@RequestMapping("/variable")
+	public String getVariable() {
+		return variableFromConfigServer;
 	}
 }
